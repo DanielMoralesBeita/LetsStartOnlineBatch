@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Regression" verbose="1" parallel="methods" thread-count="5">
+	<test name="TestLogin">
+		<classes>
+			<class name="test.SeleniumEasyOnGridTest"></class>
+		</classes>
+	</test>
+</suite>
