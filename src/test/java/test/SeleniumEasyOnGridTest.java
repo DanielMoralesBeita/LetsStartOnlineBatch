@@ -35,7 +35,7 @@ public class SeleniumEasyOnGridTest {
 		DesiredCapabilities caps = new DesiredCapabilities();
 		caps.setBrowserName("firefox");
 		
-                 option.BrowserExecutableLocation = "/usr/bin/firefox";
+               //  option.BrowserExecutableLocation = "/usr/bin/firefox";
 
 		WebDriver driver = new RemoteWebDriver(gridHubUrl, caps);
 		driver.get("http://www.seleniumeasy.com/test/basic-first-form-demo.html"); // open url
