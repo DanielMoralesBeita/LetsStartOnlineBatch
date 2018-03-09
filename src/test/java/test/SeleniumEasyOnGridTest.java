@@ -31,10 +31,12 @@ public class SeleniumEasyOnGridTest {
 		//System.setProperty("webdriver.gecko.driver","E:\\drivers\\geckodriver.exe");
 		//driver = new FirefoxDriver(); // launch
 		
-		URL gridHubUrl = new URL("http://192.168.1.29:4444/wd/hub");
+		URL gridHubUrl = new URL("http://192.168.1.120:4444/wd/hub");
 		DesiredCapabilities caps = new DesiredCapabilities();
 		caps.setBrowserName("firefox");
 		
+                 option.BrowserExecutableLocation = "/usr/bin/firefox";
+
 		WebDriver driver = new RemoteWebDriver(gridHubUrl, caps);
 		driver.get("http://www.seleniumeasy.com/test/basic-first-form-demo.html"); // open url
 	
@@ -51,7 +53,7 @@ public class SeleniumEasyOnGridTest {
 		//System.setProperty("webdriver.gecko.driver","E:\\drivers\\geckodriver.exe");
 		//driver = new FirefoxDriver(); // launch
 		
-		URL gridHubUrl = new URL("http://192.168.1.29:4444/wd/hub");
+		URL gridHubUrl = new URL("http://192.168.1.120:4444/wd/hub");
 		DesiredCapabilities caps = new DesiredCapabilities();
 		caps.setBrowserName("chrome");
 		
