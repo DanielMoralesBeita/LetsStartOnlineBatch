@@ -45,6 +45,8 @@ public class SeleniumEasyOnGridTest {
 		driver.findElement(By.xpath("//*[text()='Show Message']")).click(); // click on ShowMessage button
 		String actualMessage = driver.findElement(By.id("display")).getText(); // reading actual value from page
 		Assert.assertEquals(actualMessage, "Vikas T","Incorrect message displayed");
+		File scrsht = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+FileUtils.copyFile(scrsht, new File("screenshot.png"));
 	}
 	@Test
 	public void testCalculation() throws MalformedURLException{
@@ -65,6 +67,8 @@ public class SeleniumEasyOnGridTest {
 		driver.findElement(By.xpath("//*[@id='gettotal']/button")).click();
 		//Verify 
 		String actualValue = driver.findElement(By.id("displayvalue")).getText();
+		File scrsht = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(scrsht, new File("screenshot.png"));
 		Assert.assertEquals(actualValue, "30","Calculation failed");
 	}
 }
