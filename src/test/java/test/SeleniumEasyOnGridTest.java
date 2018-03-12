@@ -35,7 +35,7 @@ public class SeleniumEasyOnGridTest {
 //	}
 	@Test
 	public void testMessage() throws MalformedURLException{
-		try {
+		
 		System.out.println("BeforeMethod");
 		//System.setProperty("webdriver.gecko.driver","E:\\drivers\\geckodriver.exe");
 		//driver = new FirefoxDriver(); // launch
@@ -50,12 +50,8 @@ public class SeleniumEasyOnGridTest {
 		driver.get("http://www.seleniumeasy.com/test/basic-first-form-demo.html"); // open url
 	File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 // Now you can do whatever you need to do with it, for example copy somewhere
+		try {
 FileUtils.copyFile(scrFile, new File("screenshotFF.png"));
-		System.out.println("Test Message test case..");
-		driver.findElement(By.cssSelector("input#user-message")).sendKeys("Vikas T"); // type Vikas T
-		driver.findElement(By.xpath("//*[text()='Show Message']")).click(); // click on ShowMessage button
-		String actualMessage = driver.findElement(By.id("display")).getText(); // reading actual value from page
-		Assert.assertEquals(actualMessage, "Vikas T","Incorrect message displayed");
 			}
  
 catch (IOException e)
@@ -63,11 +59,17 @@ catch (IOException e)
   System.out.println(e.getMessage());
  
  }
+		System.out.println("Test Message test case..");
+		driver.findElement(By.cssSelector("input#user-message")).sendKeys("Vikas T"); // type Vikas T
+		driver.findElement(By.xpath("//*[text()='Show Message']")).click(); // click on ShowMessage button
+		String actualMessage = driver.findElement(By.id("display")).getText(); // reading actual value from page
+		Assert.assertEquals(actualMessage, "Vikas T","Incorrect message displayed");
+			
 	
 	}
 	@Test
 	public void testCalculation() throws MalformedURLException{
-		try {
+	
 		System.out.println("Calculate test case..");
 		System.out.println("BeforeMethod");
 		//System.setProperty("webdriver.gecko.driver","E:\\drivers\\geckodriver.exe");
@@ -81,7 +83,14 @@ catch (IOException e)
 		driver.get("http://www.seleniumeasy.com/test/basic-first-form-demo.html"); // open url
 	File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 // Now you can do whatever you need to do with it, for example copy somewhere
-FileUtils.copyFile(scrFile, new File("Chromescreenshot.png"));
+	try {FileUtils.copyFile(scrFile, new File("Chromescreenshot.png"));
+					}
+ 
+catch (IOException e)
+ {
+  System.out.println(e.getMessage());
+ 
+ }
 		driver.findElement(By.id("sum1")).sendKeys("10");
 		driver.findElement(By.id("sum2")).sendKeys("20");
 		driver.findElement(By.xpath("//*[@id='gettotal']/button")).click();
@@ -89,12 +98,6 @@ FileUtils.copyFile(scrFile, new File("Chromescreenshot.png"));
 		String actualValue = driver.findElement(By.id("displayvalue")).getText();
 	
 		Assert.assertEquals(actualValue, "30","Calculation failed");
-				}
- 
-catch (IOException e)
- {
-  System.out.println(e.getMessage());
- 
- }
+		
 	}
 }
