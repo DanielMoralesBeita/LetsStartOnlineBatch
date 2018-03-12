@@ -40,7 +40,7 @@ public class SeleniumEasyOnGridTest {
 		//System.setProperty("webdriver.gecko.driver","E:\\drivers\\geckodriver.exe");
 		//driver = new FirefoxDriver(); // launch
 		
-		URL gridHubUrl = new URL("http://192.168.1.120:32769/wd/hub");
+		URL gridHubUrl = new URL("http://192.168.1.120:32774/wd/hub");
 		DesiredCapabilities caps = new DesiredCapabilities();
 		caps.setBrowserName("firefox");
 		
@@ -73,7 +73,7 @@ catch (IOException e)
 		//System.setProperty("webdriver.gecko.driver","E:\\drivers\\geckodriver.exe");
 		//driver = new FirefoxDriver(); // launch
 		
-		URL gridHubUrl = new URL("http://192.168.1.120:32769/wd/hub");
+		URL gridHubUrl = new URL("http://192.168.1.120:32772/wd/hub");
 		DesiredCapabilities caps = new DesiredCapabilities();
 		caps.setBrowserName("chrome");
 		
