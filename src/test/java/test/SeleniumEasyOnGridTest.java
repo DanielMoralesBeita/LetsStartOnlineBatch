@@ -52,7 +52,7 @@ public class SeleniumEasyOnGridTest {
 // Now you can do whatever you need to do with it, for example copy somewhere
 		try {
 FileUtils.copyFile(scrFile, new File("screenshotFF.png"));
-			//}
+			}
  
 catch (IOException e)
  {
