@@ -73,7 +73,7 @@ catch (IOException e)
 		//System.setProperty("webdriver.gecko.driver","E:\\drivers\\geckodriver.exe");
 		//driver = new FirefoxDriver(); // launch
 		
-		URL gridHubUrl = new URL("http://192.168.1.120:4444/wd/hub");
+		URL gridHubUrl = new URL("http://192.168.1.120:32769/wd/hub");
 		DesiredCapabilities caps = new DesiredCapabilities();
 		caps.setBrowserName("chrome");
 		
