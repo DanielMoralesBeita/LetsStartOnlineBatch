@@ -50,7 +50,7 @@ public class SeleniumEasyOnGridTest {
 		driver.get("http://www.seleniumeasy.com/test/basic-first-form-demo.html"); // open url
 	File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 // Now you can do whatever you need to do with it, for example copy somewhere
-FileUtils.copyFile(scrFile, new File("e:\\FF\\screenshot.png"));
+FileUtils.copyFile(scrFile, new File("screenshotFF.png"));
 		System.out.println("Test Message test case..");
 		driver.findElement(By.cssSelector("input#user-message")).sendKeys("Vikas T"); // type Vikas T
 		driver.findElement(By.xpath("//*[text()='Show Message']")).click(); // click on ShowMessage button
@@ -81,7 +81,7 @@ catch (IOException e)
 		driver.get("http://www.seleniumeasy.com/test/basic-first-form-demo.html"); // open url
 	File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 // Now you can do whatever you need to do with it, for example copy somewhere
-FileUtils.copyFile(scrFile, new File("e:\\Chrome\\screenshot.png"));
+FileUtils.copyFile(scrFile, new File("Chromescreenshot.png"));
 		driver.findElement(By.id("sum1")).sendKeys("10");
 		driver.findElement(By.id("sum2")).sendKeys("20");
 		driver.findElement(By.xpath("//*[@id='gettotal']/button")).click();
