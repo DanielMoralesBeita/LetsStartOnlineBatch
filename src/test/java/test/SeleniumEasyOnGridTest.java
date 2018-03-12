@@ -1,7 +1,15 @@
 package test;
 import java.net.MalformedURLException;
 import java.net.URL;
-
+import java.io.File;
+ 
+import java.io.IOException;
+ 
+import org.apache.commons.io.FileUtils;
+ 
+import org.openqa.selenium.OutputType;
+ 
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -39,7 +47,9 @@ public class SeleniumEasyOnGridTest {
 
 		WebDriver driver = new RemoteWebDriver(gridHubUrl, caps);
 		driver.get("http://www.seleniumeasy.com/test/basic-first-form-demo.html"); // open url
-	
+	File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+// Now you can do whatever you need to do with it, for example copy somewhere
+FileUtils.copyFile(scrFile, new File("c:\\tmp\\screenshot.png"));
 		System.out.println("Test Message test case..");
 		driver.findElement(By.cssSelector("input#user-message")).sendKeys("Vikas T"); // type Vikas T
 		driver.findElement(By.xpath("//*[text()='Show Message']")).click(); // click on ShowMessage button
@@ -60,7 +70,9 @@ public class SeleniumEasyOnGridTest {
 		
 		WebDriver driver = new RemoteWebDriver(gridHubUrl, caps);
 		driver.get("http://www.seleniumeasy.com/test/basic-first-form-demo.html"); // open url
-	
+	File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+// Now you can do whatever you need to do with it, for example copy somewhere
+FileUtils.copyFile(scrFile, new File("c:\\tmp\\screenshot.png"));
 		driver.findElement(By.id("sum1")).sendKeys("10");
 		driver.findElement(By.id("sum2")).sendKeys("20");
 		driver.findElement(By.xpath("//*[@id='gettotal']/button")).click();
